@@ -19,7 +19,12 @@
 </head>
 
 <body>
-
+ <div id="loader">
+    <div class="loader-box">
+        <img src="logo.png" alt="Logo">
+        <h2>MZN Graphics Hub</h2>
+    </div>
+</div>   
 <header>
 
 <div class="container">
@@ -149,6 +154,14 @@ Contact Me
             </div>
 
             <a href="#contact" class="btn">
+<button id="themeBtn">
+<i class="fas fa-moon"></i>
+</button>
+
+<div id="menuBtn">
+<i class="fas fa-bars"></i>
+</div>
+                
                 Hire Me
             </a>
 
@@ -513,12 +526,14 @@ Professional Logo, Branding, Social Media & Print Design.
 <button id="topBtn">
 <i class="fas fa-arrow-up"></i>
 </button>
- <div id="loader">
-    <div class="loader-box">
-        <img src="logo.png" alt="Logo">
-        <h2>MZN Graphics Hub</h2>
-    </div>
-</div>   
-    
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1000,
+once:true
+});
+
+<script src="script.js"></script>   
 </body>
 </html>
