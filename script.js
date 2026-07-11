@@ -54,3 +54,36 @@ topBtn.addEventListener("click", () => {
     });
 
 });
+/* Loader */
+
+window.onload=()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},800);
+
+};
+
+/* Theme */
+
+const themeBtn=document.getElementById("themeBtn");
+
+themeBtn.onclick=()=>{
+
+document.body.classList.toggle("light");
+
+};
+
+/* Mobile */
+
+const menuBtn=document.getElementById("menuBtn");
+
+const nav=document.querySelector("nav ul");
+
+menuBtn.onclick=()=>{
+
+nav.classList.toggle("show");
+
+};
