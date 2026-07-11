@@ -1,5 +1,3 @@
-// MZN Graphics Hub
-
 console.log("MZN Graphics Hub Loaded Successfully");
 
 // Smooth Scroll
@@ -9,7 +7,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const target = document.querySelector(this.getAttribute("href"));
 
-        if(target){
+        if (target) {
             target.scrollIntoView({
                 behavior: "smooth"
             });
@@ -19,71 +17,74 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Header Shadow
 window.addEventListener("scroll", () => {
-
     const header = document.querySelector("header");
 
-    if(window.scrollY > 50){
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.4)";
-    }else{
-        header.style.boxShadow = "none";
+    if (header) {
+        if (window.scrollY > 50) {
+            header.style.boxShadow = "0 5px 20px rgba(0,0,0,.4)";
+        } else {
+            header.style.boxShadow = "none";
+        }
     }
-
 });
-/* Back To Top */
 
+// Back To Top
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+if (topBtn) {
 
-    if(window.scrollY > 300){
-        topBtn.style.display = "flex";
-    }else{
-        topBtn.style.display = "none";
-    }
+    window.addEventListener("scroll", () => {
 
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
+        topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
 
     });
 
+    topBtn.onclick = () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    };
+}
+
+// Loader
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        const loader = document.getElementById("loader");
+
+        if (loader) loader.style.display = "none";
+
+    }, 800);
+
 });
-/* Loader */
 
-window.onload=()=>{
+// Theme
+const themeBtn = document.getElementById("themeBtn");
 
-setTimeout(()=>{
+if (themeBtn) {
 
-document.getElementById("loader").style.display="none";
+    themeBtn.onclick = () => {
 
-},800);
+        document.body.classList.toggle("light");
 
-};
+    };
 
-/* Theme */
+}
 
-const themeBtn=document.getElementById("themeBtn");
+// Mobile Menu
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.querySelector("nav ul");
 
-themeBtn.onclick=()=>{
+if (menuBtn && nav) {
 
-document.body.classList.toggle("light");
+    menuBtn.onclick = () => {
 
-};
+        nav.classList.toggle("show");
 
-/* Mobile */
+    };
 
-const menuBtn=document.getElementById("menuBtn");
-
-const nav=document.querySelector("nav ul");
-
-menuBtn.onclick=()=>{
-
-nav.classList.toggle("show");
-
-};
+}
