@@ -527,3 +527,93 @@ form button{
 border:none;
 cursor:pointer;
 }
+/* Footer */
+
+footer{
+background:#08101d;
+padding:70px 0 30px;
+}
+
+.footer-content{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-links{
+list-style:none;
+padding:0;
+}
+
+.footer-links li{
+margin:10px 0;
+}
+
+.footer-links a{
+color:#cbd5e1;
+text-decoration:none;
+}
+
+.footer-links a:hover{
+color:#3b82f6;
+}
+
+.footer-social{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.footer-social a{
+width:45px;
+height:45px;
+background:#2563eb;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+text-decoration:none;
+}
+
+.copyright{
+text-align:center;
+margin-top:40px;
+color:#94a3b8;
+}
+
+/* WhatsApp */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+color:#fff;
+text-decoration:none;
+z-index:999;
+}
+
+/* Back To Top */
+
+#topBtn{
+position:fixed;
+left:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#2563eb;
+color:#fff;
+font-size:20px;
+cursor:pointer;
+display:none;
+}
