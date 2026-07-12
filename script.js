@@ -161,3 +161,41 @@ if (contactForm) {
     });
 
 }
+// ===== Contact Form EmailJS =====
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        emailjs.send("service_oyikn29", "template_6j2mcqd", {
+
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+
+        })
+
+        .then(function() {
+
+            alert("Message Sent Successfully!");
+
+            contactForm.reset();
+
+        })
+
+        .catch(function(error) {
+
+            alert("Failed to Send Message!");
+
+            console.log(error);
+
+        });
+
+    });
+
+}
