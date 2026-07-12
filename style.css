@@ -305,7 +305,9 @@ margin-bottom:15px;
 color:#cbd5e1;
 line-height:1.7;
 }
-/* Portfolio */
+/* ==========================
+   Portfolio
+========================== */
 
 .portfolio{
 padding:100px 0;
@@ -323,12 +325,14 @@ position:relative;
 overflow:hidden;
 border-radius:18px;
 cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 .portfolio-card img{
 width:100%;
+height:100%;
 display:block;
-transition:.5s;
+transition:0.5s;
 }
 
 .portfolio-card:hover img{
@@ -346,22 +350,49 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-pointer-events:none;
+text-align:center;
+padding:20px;
 opacity:0;
-transition:.4s;
-color:#fff;
+transition:0.4s;
+z-index:2;
 }
 
 .portfolio-card:hover .overlay{
 opacity:1;
 }
 
-.portfolio-card:hover img{
-transform:scale(1.1);
+.tag{
+background:#fff;
+color:#2563eb;
+padding:6px 16px;
+border-radius:20px;
+font-size:14px;
+font-weight:600;
+margin-bottom:15px;
 }
-.portfolio-card:hover .overlay{
-bottom:0;
+
+.overlay h3{
+font-size:24px;
+margin-bottom:18px;
+color:#fff;
 }
+
+.view-btn{
+display:inline-block;
+padding:12px 24px;
+background:#fff;
+color:#2563eb;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+transition:0.3s;
+}
+
+.view-btn:hover{
+background:#0b1120;
+color:#fff;
+}
+
 /* Skills */
 
 .skills{
@@ -902,16 +933,4 @@ right:40px;
 font-size:45px;
 color:#fff;
 cursor:pointer;
-}
-.view-btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
-    background:#fff;
-    color:#2563eb;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    position:relative;
-    z-index:100;
 }
