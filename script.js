@@ -1,5 +1,5 @@
 console.log("MZN Graphics Hub Loaded Successfully");
-
+alert("Script Loaded");
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
