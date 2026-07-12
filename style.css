@@ -811,3 +811,20 @@ display:none;
 }
 
 }
+.contact-card{
+margin-top:30px;
+padding:25px;
+background:#1e293b;
+border-radius:20px;
+text-align:center;
+}
+
+.contact-card h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.contact-card p{
+color:#cbd5e1;
+margin-bottom:20px;
+}
