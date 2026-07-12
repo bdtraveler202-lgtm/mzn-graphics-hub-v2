@@ -65,16 +65,15 @@ window.addEventListener("load", () => {
 // Theme
 const themeBtn = document.getElementById("themeBtn");
 
-if (themeBtn) {
+if(themeBtn){
 
-    themeBtn.onclick = () => {
+themeBtn.addEventListener("click",()=>{
 
-        document.body.classList.toggle("light");
+document.body.classList.toggle("light");
 
-    };
+});
 
 }
-
 // Mobile Menu
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.querySelector("nav ul");
