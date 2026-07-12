@@ -828,3 +828,36 @@ margin-bottom:10px;
 color:#cbd5e1;
 margin-bottom:20px;
 }
+/* ===== Premium Footer ===== */
+
+.footer-left img{
+width:80px;
+margin-bottom:15px;
+}
+
+.footer-center{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.footer-center a{
+color:#cbd5e1;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-center a:hover{
+color:#3b82f6;
+padding-left:8px;
+}
+
+.footer-right h3,
+.footer-center h3{
+margin-bottom:15px;
+}
+
+.footer-social a:hover{
+transform:translateY(-6px) scale(1.1);
+background:#3b82f6;
+}
