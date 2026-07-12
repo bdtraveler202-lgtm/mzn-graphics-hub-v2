@@ -771,3 +771,43 @@ height:12px;
 bottom:70px;
 left:40px;
 }
+/* ===== Mobile Menu ===== */
+
+#menuBtn{
+display:none;
+font-size:28px;
+color:#fff;
+cursor:pointer;
+}
+
+@media (max-width:768px){
+
+nav{
+position:relative;
+}
+
+nav ul{
+display:none;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#111827;
+flex-direction:column;
+padding:20px;
+border-radius:15px;
+}
+
+nav ul.show{
+display:flex;
+}
+
+#menuBtn{
+display:block;
+}
+
+.btn{
+display:none;
+}
+
+}
