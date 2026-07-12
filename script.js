@@ -120,3 +120,44 @@ lightbox.onclick = (e) => {
     }
 
 };
+/* ===== EmailJS Contact Form ===== */
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        emailjs.send("service_oyikn29","template_6j2mcqd",{
+
+            from_name: document.getElementById("name").value,
+
+            from_email: document.getElementById("email").value,
+
+            subject: document.getElementById("subject").value,
+
+            message: document.getElementById("message").value
+
+        })
+
+        .then(function(){
+
+            alert("✅ Message Sent Successfully!");
+
+            contactForm.reset();
+
+        })
+
+        .catch(function(error){
+
+            alert("❌ Failed to send message.");
+
+            console.log(error);
+
+        });
+
+    });
+
+}
