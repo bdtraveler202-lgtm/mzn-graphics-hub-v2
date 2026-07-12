@@ -68,7 +68,7 @@ const themeBtn = document.getElementById("themeBtn");
 if(themeBtn){
 
 themeBtn.addEventListener("click",()=>{
-
+alert("Button Working");
 document.body.classList.toggle("light");
 
 });
