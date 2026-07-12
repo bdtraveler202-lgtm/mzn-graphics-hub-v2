@@ -965,3 +965,8 @@ body.light h3,
 body.light h4{
 color:#111827;
 }
+input::placeholder,
+textarea::placeholder{
+    color:#cbd5e1;
+    opacity:1;
+}
