@@ -1,4 +1,3 @@
-alert("Script Loaded");
 console.log("MZN Graphics Hub Loaded Successfully");
 
 // Smooth Scroll
