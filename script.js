@@ -20,11 +20,10 @@ window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
 
     if (header) {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = "0 5px 20px rgba(0,0,0,.4)";
-        } else {
-            header.style.boxShadow = "none";
-        }
+        header.style.boxShadow =
+            window.scrollY > 50
+                ? "0 5px 20px rgba(0,0,0,.4)"
+                : "none";
     }
 });
 
@@ -32,104 +31,89 @@ window.addEventListener("scroll", () => {
 const topBtn = document.getElementById("topBtn");
 
 if (topBtn) {
-
     window.addEventListener("scroll", () => {
-
         topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
-
     });
 
-    topBtn.onclick = () => {
-
+    topBtn.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-
-    };
+    });
 }
 
-
-
-// Theme
+// Dark Mode
 const themeBtn = document.getElementById("themeBtn");
 
-if(themeBtn){
-
-themeBtn.addEventListener("click",()=>{
-alert("Button Working");
-document.body.classList.toggle("light");
-
-});
-
+if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+    });
 }
+
 // Mobile Menu
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.querySelector("nav ul");
 
 if (menuBtn && nav) {
-
-    menuBtn.onclick = () => {
-
+    menuBtn.addEventListener("click", () => {
         nav.classList.toggle("show");
-
-    };
-
+    });
 }
-// ===== Portfolio Lightbox =====
 
+// Portfolio Lightbox
 const portfolioImages = document.querySelectorAll(".portfolio-card img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const closeLightbox = document.getElementById("closeLightbox");
 
-portfolioImages.forEach(img => {
+if (lightbox && lightboxImg && closeLightbox) {
 
-    img.addEventListener("click", () => {
-
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-
+    portfolioImages.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        });
     });
 
-});
-
-closeLightbox.onclick = () => {
-
-    lightbox.style.display = "none";
-
-};
-
-lightbox.onclick = (e) => {
-
-    if (e.target === lightbox) {
-
+    closeLightbox.addEventListener("click", () => {
         lightbox.style.display = "none";
+    });
 
-    }
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+}
 
-};
-/* ===== EmailJS Contact Form ===== */
-
+// EmailJS Contact Form
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
 
-    contactForm.addEventListener("submit", function(e){
+    contactForm.addEventListener("submit", function(e) {
 
         e.preventDefault();
 
-       emailjs.send("service_oyikn29", "template_6j2mcqd", {
-    from_name: document.getElementById("name").value,
-    from_email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-    message: document.getElementById("message").value
-})
-.then(function () {
-    alert("✅ Message Sent Successfully!");
-    contactForm.reset();
-})
-.catch(function (error) {
-    console.log(error);
-    alert("❌ " + JSON.stringify(error));
-});
+        emailjs.send("service_oyikn29", "template_6j2mcqd", {
+            from_name: document.getElementById("name").value,
+            from_email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        })
+
+        .then(() => {
+            alert("✅ Message Sent Successfully!");
+            contactForm.reset();
+        })
+
+        .catch((error) => {
+            console.error(error);
+            alert("❌ Failed to send message.");
+        });
+
+    });
+
+}
