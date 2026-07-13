@@ -119,28 +119,17 @@ if (contactForm) {
 
         e.preventDefault();
 
-        emailjs.send("service_oyikn29", "template_6j2mcqd", {
+       emailjs.send("service_oyikn29", "template_6j2mcqd", {
     from_name: document.getElementById("name").value,
     from_email: document.getElementById("email").value,
-    name: document.getElementById("name").value,
+    subject: document.getElementById("subject").value,
     message: document.getElementById("message").value
 })
-        .then(function(){
-
-            alert("✅ Message Sent Successfully!");
-
-            contactForm.reset();
-
-        })
-
-        .catch(function(error){
-
-            alert("❌ Failed to send message.");
-
-            console.log(error);
-
-        });
-
-    });
-
-}
+.then(function () {
+    alert("✅ Message Sent Successfully!");
+    contactForm.reset();
+})
+.catch(function (error) {
+    console.log(error);
+    alert("❌ " + JSON.stringify(error));
+});
